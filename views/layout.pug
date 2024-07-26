@@ -8,6 +8,7 @@ html(lang="en-US")
     link(rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans")
     link(rel="stylesheet" href="/stylesheets/whitespace-reset.css")
     link(rel="stylesheet" href="/stylesheets/application.css")
+    script(src="/javascripts/application.js")
 
   body
     header
@@ -23,3 +24,10 @@ html(lang="en-US")
               li.flash(class=kind)= message
 
       block main
+
+  footer  
+    block signIn  
+      form(action="/users/signout" method="post")
+        fieldset.actions
+          p Signed in as #{username}
+          button Sign Out
